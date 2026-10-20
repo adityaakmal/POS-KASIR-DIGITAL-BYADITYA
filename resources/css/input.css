@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@source "../views";
+
+/* Warna & font custom (dari tailwind-config.js) */
+@theme {
+    --font-display: "Playfair Display", serif;
+    --font-sans: "Inter", sans-serif;
+
+    --color-espresso-950: #0d0907;
+    --color-espresso-900: #150f0b;
+    --color-espresso-800: #1e1610;
+    --color-espresso-700: #2b2018;
+
+    --color-gold-300: #ecc987;
+    --color-gold-400: #e0b366;
+    --color-gold-500: #d4a24c;
+    --color-gold-600: #b8862f;
+
+    --color-cream: #f6ecd9;
+}
+
+/* Class custom (sebelumnya di theme.css) */
+@layer components {
+    .glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(236, 201, 135, 0.15);
+    }
+
+    .input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 0.75rem;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(246, 236, 217, 0.15);
+        color: #f6ecd9;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .input::placeholder {
+        color: rgba(246, 236, 217, 0.4);
+    }
+    .input:focus {
+        border-color: #e0b366;
+        box-shadow: 0 0 0 3px rgba(224, 179, 102, 0.2);
+    }
+
+    .btn-gold {
+        background: linear-gradient(135deg, #ecc987, #d4a24c 50%, #b8862f);
+        color: #150f0b;
+        font-weight: 600;
+        transition: transform 0.15s, filter 0.2s;
+        cursor: pointer;
+    }
+    .btn-gold:hover {
+        filter: brightness(1.08);
+    }
+    .btn-gold:active {
+        transform: scale(0.98);
+    }
+
+    .gold-text {
+        background: linear-gradient(135deg, #ecc987, #d4a24c 50%, #b8862f);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
